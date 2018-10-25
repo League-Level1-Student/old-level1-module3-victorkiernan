@@ -58,17 +58,20 @@ frame.add(quizPanel);
 		// 6. Use the createButton method to set the value of firstButton
 createButton("100");
 		// 7. Add the firstButton to the quizPanel
-quizPanel.add(firstButton); 
+quizPanel.add(firstButton);
+frame.pack();
 		// 8. Write the code to complete the createButton() method below. Check that your
 		// game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4
+firstButton = new JButton();
 
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
-
+secondButton = createButton("200");
 		// 10. Add the secondButton to the quizPanel
-
+quizPanel.add(secondButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
-
+firstButton.addActionListener(this);
+secondButton.addActionListener(this);
 		// 12. Write the code to complete the actionPerformed() method below
 
 		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
