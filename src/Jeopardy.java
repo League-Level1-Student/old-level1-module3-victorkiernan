@@ -58,6 +58,7 @@ frame.add(quizPanel);
 		// 6. Use the createButton method to set the value of firstButton
 createButton("100");
 		// 7. Add the firstButton to the quizPanel
+firstButton= new JButton();
 quizPanel.add(firstButton);
 frame.pack();
 		// 8. Write the code to complete the createButton() method below. Check that your
