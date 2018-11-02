@@ -62,8 +62,8 @@ quizPanel.add(firstButton);
 frame.pack();
 		// 8. Write the code to complete the createButton() method below. Check that your
 		// game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4
-firstButton = new JButton();
 
+//done
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
 secondButton = createButton("200");
@@ -73,7 +73,7 @@ quizPanel.add(secondButton);
 firstButton.addActionListener(this);
 secondButton.addActionListener(this);
 		// 12. Write the code to complete the actionPerformed() method below
-
+//done
 		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
 		
 		 /*
@@ -92,14 +92,15 @@ secondButton.addActionListener(this);
 	private JButton createButton(String dollarAmount) {
 		
 		// Create a new JButton
-
+		JButton button = new JButton();
 		// Set the text of the button to the dollarAmount
-
+button.setText("dollarAmount");
 		// Increment the buttonCount (this should make the layout vertical)
-
+buttonCount++;
 		// Return your new button instead of the temporary button
 
-		return new JButton("temporary button");
+		return new JButton("button");
+	
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -109,42 +110,49 @@ secondButton.addActionListener(this);
 
 		JButton buttonPressed = (JButton) e.getSource();
 		// If the buttonPressed was the firstButton
+if(buttonPressed.equals(firstButton)) {
+	
 
 			// Call the askQuestion() method
- 
+ askQuestion("2+2-1/4+1/2x=10.What is x? Hint give a fraction","25/2",400);
 		// Complete the code in the askQuestion() method. When you play the game, the score should change.
 
 		// If the buttonPressed was the secondButton
-
+//done
 			// Call the askQuestion() method with a harder question
-
+askQuestion("When was java created, exact date numbers only!(month day year)","1/23/1996",500);
 		// Clear the text on the button that was pressed (set the button text to nothing)
+firstButton.setText(" ");
+}
 
 	}
 
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) {
 		
 		// Use the playJeopardyTheme() method to play music while the use thinks of an answer
-		
+		playJeopardyTheme();
 		// Remove this temporary message and replace it with a pop-up that asks the user the question
-		JOptionPane.showMessageDialog(null, "this is where the question will be asked");
+		String answer=JOptionPane.showInputDialog(null, "2+2-1/4+1/2x=10.What is x? Hint give a fraction");
 		
 		// Stop the theme music when they have entered their response. Hint: use the sound variable 
-		
+		sound.stop();
 		// If the answer is correct
+if(answer.equals("25/2")) {
+	
 
 			// Increase the score by the prizeMoney
-
+score+=prizeMoney=score;
 			// Pop up a message to tell the user they were correct
-
+JOptionPane.showMessageDialog(null, "COOOOOOOOOOOOOOOOOOOOOOOOOOOOOREEEEEEEEEEEEEEEEEEEECT");}
 		// Otherwise
-
+else {
 			// Decrement the score by the prizeMoney
-
+score+=prizeMoney=score;
 			// Pop up a message to tell the user they were wrong and give them the correct answer
-
+JOptionPane.showMessageDialog(null, "Incorrect, the correct answer is 25/2, good try though!");
+}
 		// Call the updateScore() method
-
+updateScore();
 	}
 
 	public void playJeopardyTheme() {
